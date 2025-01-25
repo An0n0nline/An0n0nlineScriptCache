@@ -1,0 +1,13 @@
+clear;
+echo "_____________________________";
+date;
+ncal -Jeo; echo;
+ncal -C;
+echo "_____________________________";
+#weather-util 60613;
+rm weathercache;
+elinks https://google.com/search?q=Chicago+weather >> weathercache;
+sed -n 7,11p weathercache;
+echo "_____________________________";
+w3m lite.cnn.com | head -20;
+echo "_____________________________";
